@@ -5,11 +5,19 @@ import App from './App';
 import './css/style.css';
 import './css/satoshi.css';
 
-ReactDOM.render(
+// ReactDOM.render(
+//   <React.StrictMode>
+//     <Router>
+//       <App />
+//     </Router>
+//   </React.StrictMode>,
+//   document.getElementById('root') as HTMLElement,
+// );
+
+ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <Router>
       <App />
     </Router>
-  </React.StrictMode>,
-  document.getElementById('root') as HTMLElement,
-);
+  </React.StrictMode>
+)

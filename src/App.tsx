@@ -4,6 +4,7 @@ import { Login, Register, Settings, Profile } from "./pages/user"
 import Format from "./components/DynamicPageRender"
 import Main from "./pages/dashboard"
 import Loader from "./common/Loader"
+import Layout from "./layout"
 
 function App() {
   const [loading, setLoading] = React.useState<boolean>(true)
@@ -21,11 +22,13 @@ function App() {
     <Loader />
   ) : (
     <Routes>
-      <Route index element={<Format title="Dashboard" Component={Main} />} />
+      <Layout>
+        <Route index element={<Format title="Dashboard" Component={Main} />} />
+        <Route path="/profile" element={<Format title="Profile | SSE Blogs" Component={Profile} />} />
+        <Route path="/settings" element={<Format title="Setting | SSE Blogs" Component={Settings} />} />
+      </Layout>
       <Route path="/login" element={<Format title="Login | SSE Blogs" Component={Login} />} />
       <Route path="/register" element={<Format title="Register | SSE Blogs" Component={Register} />} />
-      <Route path="/profile" element={<Format title="Profile | SSE Blogs" Component={Profile} />} />
-      <Route path="/setting" element={<Format title="Setting | SSE Blogs" Component={Settings} />} />
     </Routes>
   )
 }

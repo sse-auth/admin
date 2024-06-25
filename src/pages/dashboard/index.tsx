@@ -1,5 +1,14 @@
+import { Link } from "react-router-dom"
+
 const Main = () => {
-    return <h1>main</h1>
+    return (
+        <>
+            <Link to="/login">Login</Link><br />
+            <Link to="/register">register</Link><br/>
+            <Link to="/settings">settings</Link><br/>
+            <Link to="/profile">profile</Link>
+        </>
+    )
 }
 
 export default Main
