@@ -6,7 +6,7 @@ import Main from "./pages/dashboard"
 import { UserData } from "./pages/dashboard/users"
 import Loader from "./common/Loader"
 import Layout from "./layout"
-import UnderMaintenance from "./pages/others/UnderMaintenance"
+import { CommingSoon } from "./pages/others"
 
 function App() {
   const [loading, setLoading] = React.useState<boolean>(true)
@@ -32,7 +32,7 @@ function App() {
         <Route path="/users/:id" element={<Format title="UserDetails | SSE Blogs" Component={UserData} />} />
         <Route path="/users/new" element={<Format title="New User | SSE Blogs" Component={UserData} />} />
       </Layout> */}
-      <Route path="/" element={<UnderMaintenance hours="10" minute="11" second="01" />} />
+      <Route path="/" element={<CommingSoon hours="10" minute="11" second="01" />} />
       <Route path="/login" element={<Format title="Login | SSE Blogs" Component={Login} />} />
       <Route path="/register" element={<Format title="Register | SSE Blogs" Component={Register} />} />
     </Routes>
