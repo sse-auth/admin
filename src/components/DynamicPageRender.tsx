@@ -1,18 +1,34 @@
-import React from "react"
-import PageTitle from "./PageTitle"
+import React from 'react';
+import PageTitle from './PageTitle';
+import Layout from '../layout';
 
 interface DynamicPageRendererProps {
-    Component: React.ComponentType;
-    title: string;
+  Component: React.ComponentType;
+  title: string;
 }
 
-export const DynamicPageRenderer: React.FC<DynamicPageRendererProps> = ({ title, Component }) => {
-    return (
-        <>
-            <PageTitle title={title} />
-            <Component />
-        </>
-    )
-}
+export const FormatL: React.FC<DynamicPageRendererProps> = ({
+  title,
+  Component,
+}) => {
+  return (
+    <>
+      <Layout>
+        <PageTitle title={title} />
+        <Component />
+      </Layout>
+    </>
+  );
+};
 
-export default DynamicPageRenderer
+export const Format: React.FC<DynamicPageRendererProps> = ({
+  title,
+  Component,
+}) => {
+  return (
+    <>
+      <PageTitle title={title} />
+      <Component />
+    </>
+  );
+};
